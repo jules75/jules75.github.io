@@ -14,13 +14,22 @@ e3c0b5	pink
 
 html {
     font-family: Nunito, Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+body {
     background: #e3c0b5;
+    max-width: 1200px;
+    margin: 0 auto 5em auto;
+}
+
+header, main h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 header {
-    margin: 2em 0;
+    padding-top: 2em;
     font-size: 2rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     color: #88432a;
     div {
         display: flex;
@@ -47,38 +56,33 @@ header {
 }
 
 main {
-    max-width: 1000px;
-    padding: 2em;
     margin: auto;
-    gap: 2em;
     font-size: 2rem;
-    color: #444;
-    text-align: center;
-    p {
-        margin: 1.5em 0;
-        padding: 1em;
-        border-radius: 10px;
-        text-align: left;
-        border-bottom: 5px solid #fbe9dd;
-    }
-    p.feature {
-        padding-bottom: 6em;
-    }
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    color: #e3c0b5;
+    background-color: #013730;
+    overflow: auto;
     img {
         width: 100%;
-        border-radius: 10px;
+        height: 600px;
+        object-fit: cover;
+        object-position: top;
+    }
+    div#offerings {
+        font-size: 1.25rem;
+        padding: 2em;
+        margin: 5em 0;
+        text-align: center;
+        h3 {
+            font-weight: normal;
+            color: white;
+            text-transform: uppercase;
+            padding-bottom: 0.5em;
+        }
+        display: flex;
     }
 }
 
 
-
-main p:first-child {
-    margin-top: 0;
-}
-
-main p::first-letter {
-    font-family: Playball, Arial, Helvetica, sans-serif;
-    font-size: 3em;
-    float: left;
-    margin-right: 5px;
-}
