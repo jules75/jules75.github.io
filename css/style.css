@@ -37,9 +37,9 @@ header {
         justify-content: space-between;
         margin-bottom: 2em;
     }
-    img {
+    img#logo {
         width: 800px;
-        margin: auto;
+        margin: 2rem auto;
     }
     ul {
         display: flex;
@@ -66,6 +66,7 @@ main {
     overflow: auto;
     img {
         width: 100%;
+        border-radius: 15px;
     }
     div#offerings {
         font-size: 1.5rem;
