@@ -37,6 +37,9 @@ header {
         list-style-type: none;
         gap: 1em;
     }
+    ul#socials img {
+        width: 40px;
+    }
     a {
         color: #88432a;
         text-decoration: none;
