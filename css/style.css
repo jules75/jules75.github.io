@@ -1,0 +1,81 @@
+
+
+/**
+013730	green
+88432a	brown
+e3c0b5	pink
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Nunito, Arial, Helvetica, sans-serif;
+    background: #e3c0b5;
+}
+
+header {
+    margin: 2em 0;
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #88432a;
+    div {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-evenly;
+        margin-bottom: 2em;
+    }
+    img {
+        width: 800px;
+    }
+    ul {
+        display: flex;
+        list-style-type: none;
+        gap: 1em;
+    }
+    a {
+        color: #88432a;
+        text-decoration: none;
+    }
+}
+
+main {
+    max-width: 1000px;
+    padding: 2em;
+    margin: auto;
+    gap: 2em;
+    font-size: 2rem;
+    color: #444;
+    text-align: center;
+    p {
+        margin: 1.5em 0;
+        padding: 1em;
+        border-radius: 10px;
+        text-align: left;
+        border-bottom: 5px solid #fbe9dd;
+    }
+    p.feature {
+        padding-bottom: 6em;
+    }
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+
+
+main p:first-child {
+    margin-top: 0;
+}
+
+main p::first-letter {
+    font-family: Playball, Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    float: left;
+    margin-right: 5px;
+}
