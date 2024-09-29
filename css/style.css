@@ -17,19 +17,37 @@ html {
 }
 
 body {
-    background: #e3c0b5;
     max-width: 1200px;
     margin: 0 auto 5em auto;
 }
 
+/**
+ * color schemes
+ */
+body#home, body#home main {
+    background: #e3c0b5;
+    color: #88432a;
+    header, header a {
+        color: #88432a;
+    }
+}
+body#about, body#about main {
+    background: #013730;
+    color: #aaa;
+    header, header a {
+        color: #aaa;
+    }
+}
+
+
 header, main h2 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Work Sans", sans-serif;
 }
 
 header {
     padding-top: 2em;
-    font-size: 2rem;
-    color: #88432a;
+    font-size: 1.5rem;
+
     div {
         display: flex;
         align-items: center;
@@ -38,7 +56,7 @@ header {
         margin-bottom: 2em;
     }
     img#logo {
-        width: 800px;
+        width: 600px;
         margin: 2rem auto;
     }
     ul {
@@ -50,23 +68,37 @@ header {
         width: 40px;
     }
     a {
-        color: #88432a;
         text-decoration: none;
     }
 }
 
 main {
     margin: auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
-    color: #88432a;
-    background-color: #e3c0b5;
     overflow: auto;
     img {
         width: 100%;
         border-radius: 15px;
+    }
+    img#kel {
+        float: left;
+        width: 300px;
+        margin: 0 15px 15px 0;
+    }
+    img#kim {
+        float: right;
+        width: 300px;
+        margin: 0 0 15px 15px;
+    }
+    p {
+        margin: 1em 0;
+    }
+    ul {
+        padding: 0 0 0 2em;
+        list-style-type: square;
     }
     div#offerings {
         font-size: 1.5rem;
