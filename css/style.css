@@ -53,6 +53,13 @@ body#services, body#services main {
     header, header a {
         color: #eee;
     }
+    h1 {
+        background: #eee;
+        color: #88432a;
+    }
+    h2 {
+        border-bottom: 1px solid #eee;
+    }
 }
 
 header, main h2 {
@@ -96,7 +103,9 @@ main {
     overflow: auto;
     h1 {
         text-align: center;
+        padding: 0.5em;
         margin: 2em 0 1em 0;
+        border-radius: 10px;
     }
     h1, h2 {
         font-weight: normal;
