@@ -53,10 +53,6 @@ body#services, body#services main {
     header, header a {
         color: #eee;
     }
-    h1 {
-        background: #eee;
-        color: #88432a;
-    }
     h2 {
         border-bottom: 1px solid #eee;
     }
