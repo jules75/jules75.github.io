@@ -36,15 +36,24 @@ body#home, body#home main {
 }
 body#about, body#about main {
     background: #013730;
-    color: #aaa;
+    color: #ddd;
     path {
-        fill: #aaa;
+        fill: #ddd;
     }
     header, header a {
-        color: #aaa;
+        color: #ddd;
     }
 }
-
+body#services, body#services main {
+    background: #88432a;
+    color: #eee;
+    path {
+        fill: #eee;
+    }
+    header, header a {
+        color: #eee;
+    }
+}
 
 header, main h2 {
     font-family: "Work Sans", sans-serif;
@@ -85,6 +94,16 @@ main {
     font-optical-sizing: auto;
     font-weight: 300;
     overflow: auto;
+    h1 {
+        text-align: center;
+        margin: 2em 0 1em 0;
+    }
+    h1, h2 {
+        font-weight: normal;
+    }
+    h2 {
+        margin-bottom: -0.5em;
+    }
     img {
         width: 100%;
         border-radius: 15px;
