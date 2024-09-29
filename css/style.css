@@ -102,6 +102,11 @@ main {
     p {
         margin: 1em 0;
     }
+    p.divider {
+        clear: both;
+        padding: 1em;
+        border-bottom: 1px solid white;
+    }
     ul {
         padding: 0 0 0 2em;
         list-style-type: square;
