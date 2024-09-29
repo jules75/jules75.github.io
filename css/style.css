@@ -27,6 +27,9 @@ body {
 body#home, body#home main {
     background: #e3c0b5;
     color: #88432a;
+    path {
+        fill: #88432a;
+    }
     header, header a {
         color: #88432a;
     }
@@ -34,6 +37,9 @@ body#home, body#home main {
 body#about, body#about main {
     background: #013730;
     color: #aaa;
+    path {
+        fill: #aaa;
+    }
     header, header a {
         color: #aaa;
     }
@@ -47,7 +53,6 @@ header, main h2 {
 header {
     padding-top: 2em;
     font-size: 1.5rem;
-
     div {
         display: flex;
         align-items: center;
@@ -64,8 +69,9 @@ header {
         list-style-type: none;
         gap: 1em;
     }
-    ul#socials img {
+    ul#socials svg {
         width: 40px;
+        height: 40px;
     }
     a {
         text-decoration: none;
