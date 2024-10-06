@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <style>
+        body, input, button {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+        }
+        body {
+            text-align: center;
+        }
+        span {
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>The target word is between <span id="hiWord"></span> and <span id="loWord"></span></p>
+
+    <form>
+        <input type="text" autofocus pattern="[a-z]+" />
+        <button>Guess</button>
+    </form>
+
+    <script>
+
+        let hiWord = 'a';
+        let loWord = 'zzzz';
+
+        let targetWord = 'that';
+
+        function updateUI() {
+            document.getElementById('loWord').innerText = loWord;
+            document.getElementById('hiWord').innerText = hiWord;
+        }
+
+        async function wordExists(word) {
+
+            const md5 = CryptoJS.MD5(word).toString();
+            const stub = md5.slice(0, 2);
+            const path = 'squeezle/out/' + stub + '/' + md5;
+
+            let res = await fetch(path);
+
+            return (res.status == 200);
+        }
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+
+            const guessWord = document.querySelector('input').value;
+
+            wordExists(guessWord).then(ok => {
+                if (ok) {
+                    if (guessWord < targetWord) {
+                        hiWord = guessWord;
+                    }
+                    else if (guessWord > targetWord) {
+                        loWord = guessWord;
+                    }
+                    else {
+                        console.log('Found it!')
+                    }
+                    updateUI();
+                }
+            });
+
+            e.preventDefault();
+        });
+
+        updateUI();
+
+    </script>
+
+</body>
+
+</html>
