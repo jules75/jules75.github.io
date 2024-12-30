@@ -90,10 +90,12 @@ function q12() {
     ];
 }
 
-function _q21_q22(color) {
+function q21() {
 
     let chess = new Chess();
     let moves, move;
+
+    let color = [WHITE, BLACK][Math.floor(Math.random() * 2)];
 
     // make 2 random moves (per side)
     for (let i = 0; i < 4; i++) {
@@ -128,18 +130,12 @@ function _q21_q22(color) {
     ];
 }
 
-function q21() {
-    return _q21_q22(WHITE);
-}
-
 function q22() {
-   return _q21_q22(BLACK);
-}
-
-function q23() {
 
     let chess = new Chess();
     let moves, move;
+
+    let color = WHITE;
 
     // make 1 random move (per side)
     for (let i = 0; i < 2; i++) {
@@ -161,7 +157,7 @@ function q23() {
     movelist = movelist.filter(e => !("abcdefgh".includes(e[0])));
 
     return [
-        `After ${movestr} what piece (not pawn) moves could white make?`,
+        `After ${movestr} what piece (not pawn) moves could ${color == WHITE ? 'white' : 'black'} make?`,
         movelist.sort().join(' ')
     ];
 }
@@ -177,7 +173,7 @@ const pieces = {
 
 const questions = {
     1: [q11, q12],
-    2: [q21, q22, q23]
+    2: [q21, q22]
 };
 
 function loadQuestion() {
