@@ -157,8 +157,8 @@ function q22() {
     movelist = movelist.filter(e => !("abcdefgh".includes(e[0])));
 
     return [
-        `After ${movestr} what piece (not pawn) moves could ${color == WHITE ? 'white' : 'black'} make?`,
-        movelist.sort().join(' ')
+        `After ${movestr} how many piece (not pawn) moves could ${color == WHITE ? 'white' : 'black'} make?`,
+        `${movelist.length} (${movelist.sort().join(', ')})`
     ];
 }
 
