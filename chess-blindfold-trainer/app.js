@@ -184,6 +184,7 @@ function loadQuestion() {
 
     document.querySelector('#question').innerHTML = question;
     document.querySelector('#answer').innerText = answer;
+    document.querySelector('#answer').dataset.visible = 0;
 }
 
 loadQuestion();
