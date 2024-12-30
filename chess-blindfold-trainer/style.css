@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #eee;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 20em;
+    text-align: center;
+    font-size: 16pt;
+    padding: 1em;
+}
+
+main, footer {
+    margin: auto;
+    max-width: 1000px;
+    padding: 1em;
+}
+
+main {
+    background: white;
+    box-shadow: 0 0 10px #888;
+}
+
+footer {
+    font-size: 14pt;
+}
+
+p {
+    margin: 1em 0;
+}
+
+select {
+    padding: 0.4em;
+}
+
+button {
+    padding: 0.4em;
+    font-size: 11pt;
+}
+
+#level {
+    font-size: 12pt;
+    font-style: italic;
+}
+
+#answer {
+    background-color: #444;
+    color: #444;
+    padding: 1em;
+}
+
+#answer:hover {
+    color: white;
+}
