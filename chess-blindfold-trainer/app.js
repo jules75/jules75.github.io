@@ -136,6 +136,36 @@ function q22() {
    return _q21_q22(BLACK);
 }
 
+function q23() {
+
+    let chess = new Chess();
+    let moves, move;
+
+    // make 1 random move (per side)
+    for (let i = 0; i < 2; i++) {
+        moves = chess.moves();
+        move = moves[Math.floor(Math.random() * moves.length)];
+        chess.move(move);
+    }
+
+    // add numbers to move list
+    let n = 1, movestr = "";
+    const history = chess.history();
+    for (let i = 0; i < history.length; i += 2) {
+        movestr += `${n}. ${history[i]} ${history[i + 1]}, `;
+        n++;
+    }
+
+    // remove pawn moves from list
+    let movelist = chess.moves();
+    movelist = movelist.filter(e => !("abcdefgh".includes(e[0])));
+
+    return [
+        `After ${movestr} what piece (not pawn) moves could white make?`,
+        movelist.sort().join(' ')
+    ];
+}
+
 const pieces = {
     'k': 'king',
     'q': 'queen',
@@ -147,7 +177,7 @@ const pieces = {
 
 const questions = {
     1: [q11, q12],
-    2: [q21, q22]
+    2: [q21, q22, q23]
 };
 
 function loadQuestion() {
