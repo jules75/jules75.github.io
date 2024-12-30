@@ -50,10 +50,15 @@ button {
 
 #answer {
     background-color: #444;
-    color: #444;
     padding: 1em;
+    cursor: pointer;
 }
 
-#answer:hover {
+#answer[data-visible="0"] {
+    color: #444;
+}
+
+#answer[data-visible="1"] {
     color: white;
 }
+

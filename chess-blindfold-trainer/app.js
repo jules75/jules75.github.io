@@ -190,3 +190,4 @@ loadQuestion();
 
 document.querySelector('button').addEventListener('click', loadQuestion);
 document.querySelector('select').addEventListener('change', loadQuestion);
+document.querySelector('#answer').addEventListener('click', e => e.target.dataset.visible = 1 - e.target.dataset.visible);
