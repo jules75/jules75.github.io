@@ -90,7 +90,7 @@ function q12() {
     ];
 }
 
-function q21() {
+function _q21_q22(color) {
 
     let chess = new Chess();
     let moves, move;
@@ -108,7 +108,7 @@ function q21() {
         rank = randomRank();
         file = randomFile();
         square = file + rank;
-        attackers = chess.attackers(square);
+        attackers = chess.attackers(square, color);
         if (attackers.length > 0 && chess.get(square) == undefined) {
             break;
         }
@@ -123,9 +123,17 @@ function q21() {
     }
 
     return [
-        `After ${movelist} what white pieces could attack ${square}?`,
+        `After ${movelist} what ${color == WHITE ? 'white' : 'black'} pieces could attack ${square}?`,
         attackers.join(', ')
     ];
+}
+
+function q21() {
+    return _q21_q22(WHITE);
+}
+
+function q22() {
+   return _q21_q22(BLACK);
 }
 
 const pieces = {
@@ -139,7 +147,7 @@ const pieces = {
 
 const questions = {
     1: [q11, q12],
-    2: [q21]
+    2: [q21, q22]
 };
 
 function loadQuestion() {
