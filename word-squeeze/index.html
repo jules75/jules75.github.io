@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        input {
+            display: block;
+            margin: 1em;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <input type="text" id="hiword" readonly /> 
+        <input type="text" id="guess" required autofocus />
+        <input type="text" id="loword" readonly />
+        <input type="submit" value="Go">
+    </form>
+
+    <script>
+
+        let state = {
+            target: 'fishing',
+            guess: '',
+            hiword: 'eggplant',
+            loword: 'goat'
+        };
+
+        async function foo(file) {
+            let x = await fetch(file);
+
+            if (x.status != 200) {
+                console.log('Word not found!');
+            }
+            else {
+                console.log('Word found');
+            }
+
+            renderState();
+        }
+
+        function renderState() {
+            document.querySelector('#hiword').value = state.hiword;
+            document.querySelector('#loword').value = state.loword;
+        }
+
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', function (ev) {
+
+            state.guess = document.querySelector('input#guess').value;
+
+            // is guess between hi/lo words?
+            if (state.guess <= state.hiword || state.guess >= state.loword) {
+                ev.preventDefault();
+                return;
+            }
+
+            // is guess in word list?
+            const hash = CryptoJS.MD5(state.guess).toString();
+            const url = 'hash/' + hash.substring(0,2) + '/' + hash;
+            foo(url);
+
+            ev.preventDefault();
+        });
+
+        renderState();
+
+    </script>
+
+</body>
+
+</html>
