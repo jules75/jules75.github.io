@@ -9,10 +9,15 @@
             padding: 0;
             margin: 0;
         }
+
         input {
             display: block;
             margin: 1em;
             padding: 1em;
+        }
+
+        input[type="submit"] {
+            display: none;
         }
     </style>
 </head>
@@ -20,7 +25,7 @@
 <body>
 
     <form>
-        <input type="text" id="hiword" readonly /> 
+        <input type="text" id="hiword" readonly />
         <input type="text" id="guess" required autofocus />
         <input type="text" id="loword" readonly />
         <input type="submit" value="Go">
@@ -31,18 +36,23 @@
         let state = {
             target: 'fishing',
             guess: '',
-            hiword: 'eggplant',
-            loword: 'goat'
+            hiword: 'aardvark',
+            loword: 'zygote'
         };
 
         async function foo(file) {
             let x = await fetch(file);
 
-            if (x.status != 200) {
-                console.log('Word not found!');
-            }
-            else {
-                console.log('Word found');
+            if (x.status == 200) {
+
+                if (state.guess < state.target) {
+                    state.hiword = state.guess;
+                }
+                else {
+                    state.loword = state.guess;
+                }
+
+                state.guess = '';
             }
 
             renderState();
@@ -50,6 +60,7 @@
 
         function renderState() {
             document.querySelector('#hiword').value = state.hiword;
+            document.querySelector('#guess').value = state.guess;
             document.querySelector('#loword').value = state.loword;
         }
 
@@ -67,7 +78,7 @@
 
             // is guess in word list?
             const hash = CryptoJS.MD5(state.guess).toString();
-            const url = 'hash/' + hash.substring(0,2) + '/' + hash;
+            const url = 'hash/' + hash.substring(0, 2) + '/' + hash;
             foo(url);
 
             ev.preventDefault();
