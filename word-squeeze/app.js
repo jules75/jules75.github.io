@@ -3,7 +3,7 @@
 var state;
 
 // one local storage entry per day
-let localStorageKey = 'word-squeeze-' + dayOfYear();
+let localStorageKey = 'word-squeeze-' + (new Date()).getFullYear() + '-' + dayOfYear();
 
 async function lookupWord(file) {
     let response = await fetch(file);
