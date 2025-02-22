@@ -100,6 +100,12 @@ form.addEventListener('submit', function (ev) {
     ev.preventDefault();
 });
 
+// force guess to lower case alphabet
+document.querySelector('#guess').addEventListener('input', function (ev) {
+    ev.target.value = ev.target.value.toLowerCase();
+    ev.target.value = ev.target.value.replace(/[^a-z]/g, '');
+});
+
 async function loadTarget() {
     let response = await fetch('targets.json');
     let targets = await response.json();
