@@ -1,12 +1,9 @@
-let state = {
-    score: 0,
-    target: '',
-    guess: '',
-    hiword: 'aardvark',
-    loword: 'zygote',
-    badguess: false,
-    gameover: false
-};
+
+// game state
+var state;
+
+// one local storage entry per day
+let localStorageKey = 'word-squeeze-' + dayOfYear();
 
 async function lookupWord(file) {
     let response = await fetch(file);
@@ -28,7 +25,7 @@ async function lookupWord(file) {
         state.badguess = true;
     }
 
-    renderState();
+    update();
 }
 
 function dayOfYear() {
@@ -38,13 +35,13 @@ function dayOfYear() {
     return Math.floor((today - jan1) / oneDay);
 }
 
-function renderState() {
+function update() {
 
-    const options = {
-        month: 'short',
-        day: 'numeric'
-    };
-    const dt = (new Date()).toLocaleString(undefined, options);
+    // save state
+    localStorage.setItem(localStorageKey, JSON.stringify(state));
+
+    // update UI
+    const dt = (new Date()).toLocaleString(undefined, {month: 'short', day: 'numeric'});
     document.querySelector('#date').innerText = dt;
 
     document.querySelector('#hiword').value = state.hiword;
@@ -79,7 +76,7 @@ form.addEventListener('submit', function (ev) {
     if (state.guess == state.target) {
         state.score++;
         state.gameover = true;
-        renderState();
+        update();
         ev.preventDefault();
         return;
     }
@@ -87,7 +84,7 @@ form.addEventListener('submit', function (ev) {
     // is guess between hi/lo words?
     if (state.guess <= state.hiword || state.guess >= state.loword) {
         state.badguess = true;
-        renderState();
+        update();
         ev.preventDefault();
         return;
     }
@@ -112,5 +109,27 @@ async function loadTarget() {
     state.target = targets[dayOfYear()];
 }
 
-loadTarget();
-renderState();
+document.addEventListener("DOMContentLoaded", function() {
+
+    // load state from local storage if present, otherwise initialise
+    try {
+        state = JSON.parse(localStorage.getItem(localStorageKey));
+        if (state == null) {
+            throw new Error();
+        }
+    }
+    catch (error) {
+        state = {
+            score: 0,
+            target: '',
+            guess: '',
+            hiword: 'aardvark',
+            loword: 'zygote',
+            badguess: false,
+            gameover: false
+        };
+    }
+
+    loadTarget();
+    update();
+});
