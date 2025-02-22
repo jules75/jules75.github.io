@@ -19,6 +19,18 @@
         input[type="submit"] {
             display: none;
         }
+
+        .jiggle {
+            animation: jiggle 0.25s infinite;
+        }
+
+        @keyframes jiggle {
+            0% { transform: translate(0); }
+            25% { transform: translate(-5px, 0); }
+            50% { transform: translate(5px, 0); }
+            75% { transform: translate(-5px, 0); }
+            100% { transform: translate(0); }
+        }
     </style>
 </head>
 
@@ -37,7 +49,8 @@
             target: 'fishing',
             guess: '',
             hiword: 'aardvark',
-            loword: 'zygote'
+            loword: 'zygote',
+            badguess: false
         };
 
         async function foo(file) {
@@ -54,6 +67,9 @@
 
                 state.guess = '';
             }
+            else {
+                state.badguess = true;
+            }
 
             renderState();
         }
@@ -69,6 +85,14 @@
             document.querySelector('#hiword').value = state.hiword;
             document.querySelector('#guess').value = state.guess;
             document.querySelector('#loword').value = state.loword;
+
+            if (state.badguess) {
+                document.querySelector('#guess').classList.add('jiggle');
+                state.badguess = false;
+                setTimeout(function() {
+                    document.querySelector('#guess').classList.remove('jiggle');
+                }, 700)
+            }
         }
 
         const form = document.querySelector('form');
@@ -86,6 +110,8 @@
 
             // is guess between hi/lo words?
             if (state.guess <= state.hiword || state.guess >= state.loword) {
+                state.badguess = true;
+                renderState();
                 ev.preventDefault();
                 return;
             }
