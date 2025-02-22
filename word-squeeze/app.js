@@ -8,10 +8,10 @@ let state = {
     gameover: false
 };
 
-async function foo(file) {
-    let x = await fetch(file);
+async function lookupWord(file) {
+    let response = await fetch(file);
 
-    if (x.status == 200) {
+    if (response.status == 200) {
 
         state.score++;
 
@@ -87,15 +87,15 @@ form.addEventListener('submit', function (ev) {
     // is guess in word list?
     const hash = CryptoJS.MD5(state.guess).toString();
     const url = 'hash/' + hash.substring(0, 2) + '/' + hash;
-    foo(url);
+    lookupWord(url);
 
     ev.preventDefault();
 });
 
 async function loadTarget() {
-    let x = await fetch('targets.json');
-    let y = await x.json();
-    state.target = y[dayOfYear()];
+    let response = await fetch('targets.json');
+    let targets = await response.json();
+    state.target = targets[dayOfYear()];
 }
 
 loadTarget();
