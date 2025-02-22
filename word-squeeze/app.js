@@ -4,7 +4,8 @@ let state = {
     guess: '',
     hiword: 'aardvark',
     loword: 'zygote',
-    badguess: false
+    badguess: false,
+    gameover: false
 };
 
 async function foo(file) {
@@ -51,6 +52,13 @@ function renderState() {
             document.querySelector('#guess').classList.remove('jiggle');
         }, 700)
     }
+
+    if (state.gameover) {
+        const input = document.querySelector('#guess');
+        input.readOnly = true;
+        input.classList.add('gameover');
+        input.classList.add('throb');
+    }
 }
 
 const form = document.querySelector('form');
@@ -61,7 +69,9 @@ form.addEventListener('submit', function (ev) {
 
     // is guess correct?
     if (state.guess == state.target) {
-        alert('You won!');
+        state.score++;
+        state.gameover = true;
+        renderState();
         ev.preventDefault();
         return;
     }
