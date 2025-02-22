@@ -77,6 +77,13 @@
 
             state.guess = document.querySelector('input#guess').value;
 
+            // is guess correct?
+            if (state.guess == state.target) {
+                alert('You won!');
+                ev.preventDefault();
+                return;
+            }
+
             // is guess between hi/lo words?
             if (state.guess <= state.hiword || state.guess >= state.loword) {
                 ev.preventDefault();
