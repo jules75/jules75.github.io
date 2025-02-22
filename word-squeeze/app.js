@@ -1,4 +1,5 @@
 let state = {
+    score: 0,
     target: 'fishing',
     guess: '',
     hiword: 'aardvark',
@@ -10,6 +11,8 @@ async function foo(file) {
     let x = await fetch(file);
 
     if (x.status == 200) {
+
+        state.score++;
 
         if (state.guess < state.target) {
             state.hiword = state.guess;
@@ -38,6 +41,8 @@ function renderState() {
     document.querySelector('#hiword').value = state.hiword;
     document.querySelector('#guess').value = state.guess;
     document.querySelector('#loword').value = state.loword;
+
+    document.querySelector('#score').innerText = state.score; 
 
     if (state.badguess) {
         document.querySelector('#guess').classList.add('jiggle');
