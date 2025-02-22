@@ -1,6 +1,6 @@
 let state = {
     score: 0,
-    target: 'fishing',
+    target: '',
     guess: '',
     hiword: 'aardvark',
     loword: 'zygote',
