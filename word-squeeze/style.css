@@ -4,9 +4,21 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     width: 20em;
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+    li {
+        padding: 0.2em 0.8em;
+        background-color: #444;
+        color: white;
+        border-radius: 5px;
+    }
 }
 
 input {
@@ -14,7 +26,7 @@ input {
     font-size: 1em;
     font-family: 'Courier New', Courier, monospace;
     display: block;
-    margin: 0.5em;
+    margin: 0.5em 0;
     padding: 0.5em;
 }
 
@@ -45,15 +57,4 @@ input.gameover {
 @keyframes throb {
     0% { box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2); }
     100% { box-shadow: 0 0 0 20px rgba(0, 0, 0, 0); }
-}
-  
-
-#score {
-    position: fixed;
-    top: 5px;
-    right: 5px;
-    background-color: #444;
-    color: yellow;
-    padding: 0.2em 1em;
-    border-radius: 5px;
 }

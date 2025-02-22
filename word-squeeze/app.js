@@ -39,11 +39,19 @@ function dayOfYear() {
 }
 
 function renderState() {
+
+    const options = {
+        month: 'short',
+        day: 'numeric'
+    };
+    const dt = (new Date()).toLocaleString(undefined, options);
+    document.querySelector('#date').innerText = dt;
+
     document.querySelector('#hiword').value = state.hiword;
     document.querySelector('#guess').value = state.guess;
     document.querySelector('#loword').value = state.loword;
 
-    document.querySelector('#score').innerText = state.score; 
+    document.querySelector('#score').innerText = state.score;
 
     if (state.badguess) {
         document.querySelector('#guess').classList.add('jiggle');
