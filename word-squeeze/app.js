@@ -51,7 +51,7 @@ function update() {
     document.querySelector('#score').innerText = state.score;
 
     if (!state.showhelp) {
-        document.querySelector('#help').remove();
+        document.querySelector('#help')?.remove();
     }
 
     if (state.badguess) {
