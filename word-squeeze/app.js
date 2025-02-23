@@ -50,6 +50,10 @@ function update() {
 
     document.querySelector('#score').innerText = state.score;
 
+    if (!state.showhelp) {
+        document.querySelector('#help').remove();
+    }
+
     if (state.badguess) {
         document.querySelector('#guess').classList.add('jiggle');
         state.badguess = false;
@@ -109,6 +113,11 @@ async function loadTarget() {
     state.target = targets[dayOfYear()];
 }
 
+document.querySelector('#help button').addEventListener('click', function (ev) {
+    state.showhelp = false;
+    update();
+});
+
 document.addEventListener("DOMContentLoaded", function() {
 
     // load state from local storage if present, otherwise initialise
@@ -126,7 +135,8 @@ document.addEventListener("DOMContentLoaded", function() {
             hiword: 'aardvark',
             loword: 'zygote',
             badguess: false,
-            gameover: false
+            gameover: false,
+            showhelp: true
         };
     }
 

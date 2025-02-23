@@ -58,3 +58,17 @@ input.gameover {
     0% { box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2); }
     100% { box-shadow: 0 0 0 20px rgba(0, 0, 0, 0); }
 }
+
+#help {
+    background-color: gold;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em 0;
+    & p {
+        margin: 1em;
+    }
+    & button {
+        width: 100%;
+        padding: 1em;
+    }
+}
