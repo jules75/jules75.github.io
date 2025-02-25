@@ -55,11 +55,11 @@ function update() {
     }
 
     if (state.badguess) {
-        document.querySelector('#guess').classList.add('jiggle');
+        document.querySelector('#guess').classList.add('error');
         state.badguess = false;
         setTimeout(function () {
-            document.querySelector('#guess').classList.remove('jiggle');
-        }, 700)
+            document.querySelector('#guess').classList.remove('error');
+        }, 500)
     }
 
     if (state.gameover) {

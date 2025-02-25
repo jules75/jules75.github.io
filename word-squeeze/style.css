@@ -38,16 +38,8 @@ input.gameover {
     background-color: palegreen;
 }
 
-.jiggle {
-    animation: jiggle 0.25s infinite;
-}
-
-@keyframes jiggle {
-    0% { transform: translate(0); }
-    25% { transform: translate(-5px, 0); }
-    50% { transform: translate(5px, 0); }
-    75% { transform: translate(-5px, 0); }
-    100% { transform: translate(0); }
+.error {
+    background-color: red;
 }
 
 .throb {
