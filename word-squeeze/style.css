@@ -11,6 +11,9 @@ body {
 
 div#buttons {
     margin-top: 4em;
+    & button#share {
+        display: none;
+    }
 }
 
 ul {

@@ -44,7 +44,7 @@ function updateUI() {
     localStorage.setItem(localStorageKey, JSON.stringify(state));
 
     // update UI
-    const dt = (new Date()).toLocaleString(undefined, {month: 'short', day: 'numeric'});
+    const dt = (new Date()).toLocaleString(undefined, { month: 'short', day: 'numeric' });
     document.querySelector('#date').innerText = dt;
 
     document.querySelector('#hiword').value = state.hiword;
@@ -74,6 +74,7 @@ function updateUI() {
         input.readOnly = true;
         input.classList.add('gameover');
         input.classList.add('throb');
+        document.querySelector('button#share').style.display = 'inline-block';
     }
 }
 
@@ -128,14 +129,31 @@ document.querySelector('button#hint').addEventListener('click', function (ev) {
     if (confirm('Get a hint? This will add 3 to your score.')) {
         const len = state.target.length;
         const last = state.target[len - 1];
-        alert('The target word has ' + len + ' letters, and ends with "' + last  + '"');
+        alert('The target word has ' + len + ' letters, and ends with "' + last + '"');
         state.score += 3;
         state.showhintbutton = false;
         updateUI();
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+// share button handler
+document.querySelector('button#share').addEventListener('click', async function (ev) {
+
+    const payload = {
+        title: "Word Squeeze",
+        text: `Word Squeeze ${document.querySelector('#date').innerText}: ${state.score}`,
+        url: "https://jules75.github.io/word-squeeze/",
+    };
+
+    try {
+        await navigator.share(payload);
+        resultPara.textContent = "MDN shared successfully";
+    } catch (err) {
+        console.err(`Error sharing result: ${err}`);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
 
     // load state from local storage if present, otherwise initialise
     try {
