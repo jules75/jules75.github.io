@@ -145,9 +145,8 @@ document.querySelector('button#share').addEventListener('click', async function 
 
     try {
         await navigator.share(payload);
-        resultPara.textContent = "MDN shared successfully";
     } catch (err) {
-        console.err(`Error sharing result: ${err}`);
+        console.error(`Error sharing result: ${err}`);
     }
 });
 
