@@ -140,9 +140,7 @@ document.querySelector('button#hint').addEventListener('click', function (ev) {
 document.querySelector('button#share').addEventListener('click', async function (ev) {
 
     const payload = {
-        title: "Word Squeeze",
-        text: `Word Squeeze ${document.querySelector('#date').innerText}: ${state.score}`,
-        url: "https://jules75.github.io/word-squeeze/",
+        text: `I solved Word Squeeze ${document.querySelector('#date').innerText} in ${state.score} guesses!`,
     };
 
     try {
