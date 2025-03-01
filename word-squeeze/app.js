@@ -5,8 +5,11 @@ var state;
 // one local storage entry per day
 let localStorageKey = 'word-squeeze-' + (new Date()).getFullYear() + '-' + dayOfYear();
 
-async function lookupWord(file) {
-    let response = await fetch(file);
+async function lookupWord(word) {
+
+    const hash = CryptoJS.MD5(word).toString();
+    const url = 'hash/' + hash.substring(0, 2) + '/' + hash;
+    const response = await fetch(url);
 
     if (response.status == 200) {
 
@@ -25,7 +28,7 @@ async function lookupWord(file) {
         state.badguess = true;
     }
 
-    update();
+    updateUI();
 }
 
 function dayOfYear() {
@@ -35,7 +38,7 @@ function dayOfYear() {
     return Math.floor((today - jan1) / oneDay);
 }
 
-function update() {
+function updateUI() {
 
     // save state
     localStorage.setItem(localStorageKey, JSON.stringify(state));
@@ -80,23 +83,19 @@ form.addEventListener('submit', function (ev) {
     if (state.guess == state.target) {
         state.score++;
         state.gameover = true;
-        update();
-        ev.preventDefault();
-        return;
+        updateUI();
     }
 
     // is guess between hi/lo words?
-    if (state.guess <= state.hiword || state.guess >= state.loword) {
+    else if (state.guess <= state.hiword || state.guess >= state.loword) {
         state.badguess = true;
-        update();
-        ev.preventDefault();
-        return;
+        updateUI();
     }
 
     // is guess in word list?
-    const hash = CryptoJS.MD5(state.guess).toString();
-    const url = 'hash/' + hash.substring(0, 2) + '/' + hash;
-    lookupWord(url);
+    else {
+        lookupWord(state.guess);
+    }
 
     ev.preventDefault();
 });
@@ -115,7 +114,7 @@ async function loadTarget() {
 
 document.querySelector('#help button').addEventListener('click', function (ev) {
     state.showhelp = false;
-    update();
+    updateUI();
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -141,5 +140,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     loadTarget();
-    update();
+    updateUI();
 });
