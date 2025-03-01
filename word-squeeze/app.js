@@ -140,7 +140,7 @@ document.querySelector('button#hint').addEventListener('click', function (ev) {
 document.querySelector('button#share').addEventListener('click', async function (ev) {
 
     const payload = {
-        text: `I solved Word Squeeze ${document.querySelector('#date').innerText} in ${state.score} guesses!`,
+        text: `I solved Word Squeeze (${document.querySelector('#date').innerText}) in ${state.score} guesses!`,
     };
 
     try {
