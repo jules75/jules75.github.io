@@ -72,6 +72,7 @@ function updateUI() {
     if (state.gameover) {
         const input = document.querySelector('#guess');
         input.readOnly = true;
+        document.activeElement.blur();
         input.classList.add('gameover');
         input.classList.add('throb');
         document.querySelector('button#share').style.display = 'inline-block';
