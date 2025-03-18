@@ -116,7 +116,7 @@ document.querySelector('#guess').addEventListener('input', function (ev) {
 async function loadTarget() {
     let response = await fetch('targets.json');
     let targets = await response.json();
-    state.target = targets[dayOfYear()];
+    state.target = atob(atob(targets[dayOfYear()]));
 }
 
 // help button handler
