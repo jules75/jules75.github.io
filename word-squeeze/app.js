@@ -127,11 +127,11 @@ document.querySelector('#help button').addEventListener('click', function (ev) {
 
 // hint button handler
 document.querySelector('button#hint').addEventListener('click', function (ev) {
-    if (confirm('Get a hint? This will add 3 to your score.')) {
+    if (confirm('Get a hint? This will add 5 to your score.')) {
         const len = state.target.length;
         const last = state.target[len - 1];
         alert('The target word has ' + len + ' letters, and ends with "' + last + '"');
-        state.score += 3;
+        state.score += 5;
         state.showhintbutton = false;
         updateUI();
     }
