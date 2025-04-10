@@ -66,7 +66,10 @@ function updateUI() {
     }
 
     if (!state.showhintbutton) {
-        document.querySelector('#hint').remove();
+        const hint = document.querySelector('#hint');
+        if (hint !== null) {
+            hint.remove();
+        }
     }
 
     if (state.gameover) {
