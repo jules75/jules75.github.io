@@ -18,7 +18,7 @@ div#buttons {
 
 ul {
     display: flex;
-    gap: 1em;
+    justify-content: space-between;
     & li {
         padding: 0.2em 0.8em;
         background-color: #444;
@@ -26,12 +26,16 @@ ul {
         border-radius: 5px;
         list-style: none;
     }
+    & li#date {
+        background-color: white;
+        color: #999;
+    }
 }
 
 input {
     width: 100%;
-    font-size: 1em;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 120%;
+    font-family: Sono, 'Courier New', Courier, monospace;
     display: block;
     margin: 0.5em 0;
     padding: 0.5em;
