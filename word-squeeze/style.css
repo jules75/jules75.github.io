@@ -27,7 +27,7 @@ ul {
         list-style: none;
     }
     & li#date {
-        background-color: white;
+        background-color: inherit;
         color: #999;
     }
 }
