@@ -143,8 +143,25 @@ document.querySelector('button#hint').addEventListener('click', function (ev) {
 // share button handler
 document.querySelector('button#share').addEventListener('click', async function (ev) {
 
+    let flair;
+    if (state.score < 10) {
+        flair = '🧠🧠';
+    }
+    else if (state.score < 15) {
+        flair = '🧠';
+    }
+    else if (state.score < 20) {
+        flair = '😁';
+    }
+    else if (state.score < 25) {
+        flair = '👌';
+    }
+    else {
+        flair = '💩';
+    }
+
     const payload = {
-        text: `I solved Word Squeeze (${document.querySelector('#date').innerText}) in ${state.score} guesses!`,
+        text: `I solved Word Squeeze (${document.querySelector('#date').innerText}) in ${state.score} guesses! ${flair}`;
     };
 
     try {
