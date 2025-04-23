@@ -161,7 +161,7 @@ document.querySelector('button#share').addEventListener('click', async function 
     }
 
     const payload = {
-        text: `I solved Word Squeeze (${document.querySelector('#date').innerText}) in ${state.score} guesses! ${flair}`;
+        text: `I solved Word Squeeze (${document.querySelector('#date').innerText}) in ${state.score} guesses! ${flair}`
     };
 
     try {
