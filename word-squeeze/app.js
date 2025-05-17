@@ -82,6 +82,28 @@ function updateUI() {
     }
 }
 
+async function validateTargets() {
+
+    // get target words
+    const response = await fetch('targets.json');
+    let targets = await response.json();
+    targets = Object.values(targets);
+    targets = targets.map(s => atob(atob(s)));
+
+    // check they are unique
+    console.assert(targets.length == ((new Set(targets)).size), 'Duplicate target words found');
+
+    // check each word exists in word list
+    targets.map(async function(word) {
+        const hash = CryptoJS.MD5(word).toString();
+        const url = 'hash/' + hash.substring(0, 2) + '/' + hash;
+        const response = await fetch(url);
+        if (response.status != 200) {
+            console.error('Word "' + word + '" not valid : ' + btoa(btoa(word)));
+        }
+    });
+}
+
 const form = document.querySelector('form');
 
 form.addEventListener('submit', function (ev) {
