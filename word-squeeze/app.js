@@ -53,10 +53,6 @@ function updateUI() {
 
     document.querySelector('#score').innerText = state.score;
 
-    if (!state.showhelp) {
-        document.querySelector('#help')?.remove();
-    }
-
     if (state.badguess) {
         document.querySelector('#guess').classList.add('error');
         state.badguess = false;
@@ -145,9 +141,8 @@ async function loadTarget() {
 }
 
 // help button handler
-document.querySelector('#help button').addEventListener('click', function (ev) {
-    state.showhelp = false;
-    updateUI();
+document.querySelector('button#help').addEventListener('click', function (ev) {
+    alert('Find the target word, which changes daily.\nIt exists alphabetically between the top and bottom words.\nEach guess narrows the range of possible solutions.');
 });
 
 // hint button handler
@@ -211,7 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
             loword: 'zygote',
             badguess: false,
             gameover: false,
-            showhelp: true,
             showhintbutton: true
         };
     }
