@@ -88,7 +88,6 @@ async function validateTargets() {
     const response = await fetch('targets.json');
     let targets = await response.json();
     targets = Object.values(targets);
-    targets = targets.map(s => atob(atob(s)));
 
     // check they are unique
     console.assert(targets.length == ((new Set(targets)).size), 'Duplicate target words found');
@@ -99,7 +98,7 @@ async function validateTargets() {
         const url = 'hash/' + hash.substring(0, 2) + '/' + hash;
         const response = await fetch(url);
         if (response.status != 200) {
-            console.error('Word "' + word + '" not valid : ' + btoa(btoa(word)));
+            console.error('Word "' + word + '" not valid');
         }
     });
 }
@@ -142,7 +141,7 @@ async function loadTarget() {
     let response = await fetch('targets.json');
     let targets = await response.json();
     const key = (new Date()).getFullYear() + '-' + dayOfYear();
-    state.target = atob(atob(targets[key]));
+    state.target = targets[key];
 }
 
 // help button handler
