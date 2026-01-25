@@ -81,7 +81,7 @@ function updateUI() {
 async function validateTargets() {
 
     // get target words
-    const response = await fetch('targets.json');
+    const response = await fetch('targets.json?20260125');
     let targets = await response.json();
     targets = Object.values(targets);
 
