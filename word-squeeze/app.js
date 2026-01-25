@@ -85,11 +85,17 @@ async function validateTargets() {
     let targets = await response.json();
     targets = Object.values(targets);
 
-    // check they are unique
-    console.assert(targets.length == ((new Set(targets)).size), 'Duplicate target words found');
+    // check for duplicate word
+    const frequencies = {};
+    targets.forEach(word => { 
+        frequencies[word] = (frequencies[word] || 0) + 1; 
+        if (frequencies[word] > 1) {
+            console.error('Word "' + word + '" appears multiple times');
+        }
+    });
 
     // check each word exists in word list
-    targets.map(async function(word) {
+    targets.map(async function (word) {
         const hash = CryptoJS.MD5(word).toString();
         const url = 'hash/' + hash.substring(0, 2) + '/' + hash;
         const response = await fetch(url);
