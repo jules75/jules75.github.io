@@ -8,9 +8,22 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
+const radiusLayer = L.featureGroup().addTo(map);
 const boundaryLayer = L.featureGroup().addTo(map);
 const status = document.getElementById("status");
 const count = document.getElementById("count");
+
+const cityCenter = [-37.814079513964856, 144.96333065387304];
+const fiftyKmRadius = L.circle(cityCenter, {
+  radius: 50000,
+  color: "#d26a6a",
+  weight: 2,
+  opacity: 0.9,
+  fillColor: "#d26a6a",
+  fillOpacity: 0.12
+}).addTo(radiusLayer);
+
+fiftyKmRadius.bindPopup("50 km radius around Melbourne CBD");
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -76,6 +89,7 @@ async function loadBoundaries() {
 
     records.forEach(showBoundary);
     map.fitBounds(boundaryLayer.getBounds(), { padding: [18, 18] });
+    map.setView(cityCenter, 10);
     count.textContent = `${records.length} local government areas`;
     status.textContent = `Showing all ${records.length} boundaries. Select an area for its council name.`;
   } catch (error) {
