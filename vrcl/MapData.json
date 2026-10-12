@@ -1506,7 +1506,7 @@
       -38.162411695,
       145.097920865
     ],
-    "name": "MORNINGTON PENINSULA",
+    "name": "Mornington Peninsula",
     "data": {
       "title": "Mornington Peninsula Shire Council",
       "phone": "1300 850 600",
@@ -2003,7 +2003,7 @@
       -37.833112743000015,
       145.280832776
     ],
-    "name": "KNOX",
+    "name": "Knox",
     "data": {
       "title": "Knox City Council",
       "phone": "(03) 9298 8000",
@@ -2252,7 +2252,7 @@
       -37.761845032999986,
       145.27820313400002
     ],
-    "name": "MAROONDAH",
+    "name": "Maroondah",
     "data": {
       "title": "Maroondah City Council",
       "phone": "1300 882 233",
@@ -2481,7 +2481,7 @@
       -37.923997794,
       145.08247561899998
     ],
-    "name": "KINGSTON",
+    "name": "Kingston",
     "data": {
       "title": "Kingston City Council",
       "phone": "1300 653 356",
@@ -2674,7 +2674,7 @@
       -37.85334954799998,
       145.09511086700002
     ],
-    "name": "MONASH",
+    "name": "Monash",
     "data": {
       "title": "Monash City Council",
       "phone": "(03) 9518 3555",
@@ -3771,7 +3771,7 @@
       -37.487738819000015,
       145.23931824600004
     ],
-    "name": "NILLUMBIK",
+    "name": "Nillumbik",
     "data": {
       "title": "Nillumbik Shire Council",
       "phone": "(03) 9433 3111",
@@ -4540,7 +4540,7 @@
       -37.702391456999976,
       145.29201578899995
     ],
-    "name": "MANNINGHAM",
+    "name": "Manningham",
     "data": {
       "title": "Manningham City Council",
       "phone": "(03) 9840 9333",
@@ -4737,7 +4737,7 @@
       -37.79231444200002,
       145.10658043700005
     ],
-    "name": "WHITEHORSE",
+    "name": "Whitehorse",
     "data": {
       "title": "Whitehorse City Council",
       "phone": "(03) 9262 6333",
@@ -4870,7 +4870,7 @@
       -37.860225302,
       145.01052133099995
     ],
-    "name": "GLEN EIRA",
+    "name": "Glen Eira",
     "data": {
       "title": "Glen Eira City Council",
       "phone": "(03) 9524 3333",
@@ -5087,7 +5087,7 @@
       -37.88327348299998,
       144.99226428099996
     ],
-    "name": "BAYSIDE",
+    "name": "Bayside",
     "data": {
       "title": "Bayside City Council",
       "phone": "(03) 9599 4444",
@@ -5328,7 +5328,7 @@
       -37.82962227799999,
       144.987930152
     ],
-    "name": "STONNINGTON",
+    "name": "Stonnington",
     "data": {
       "title": "Stonnington City Council",
       "phone": "(03) 8290 1333",
@@ -5721,7 +5721,7 @@
       -37.776898023,
       145.077722592
     ],
-    "name": "BOROONDARA",
+    "name": "Boroondara",
     "data": {
       "title": "Boroondara City Council",
       "phone": "(03) 9278 4444",
@@ -6182,7 +6182,7 @@
       -37.68262830499998,
       145.14369309799997
     ],
-    "name": "BANYULE",
+    "name": "Banyule",
     "data": {
       "title": "Banyule City Council",
       "phone": "(03) 9490 4222",
@@ -7159,7 +7159,7 @@
       -37.40437528699999,
       145.11397946
     ],
-    "name": "WHITTLESEA",
+    "name": "Whittlesea",
     "data": {
       "title": "Whittlesea City Council",
       "phone": "(03) 9217 2170",
@@ -7372,7 +7372,7 @@
       -37.82593948800002,
       144.94172098299998
     ],
-    "name": "PORT PHILLIP",
+    "name": "Port Phillip",
     "data": {
       "title": "Port Phillip City Council",
       "phone": "(03) 9209 6777",
@@ -7713,7 +7713,7 @@
       -37.77531067799998,
       144.978884667
     ],
-    "name": "YARRA",
+    "name": "Yarra",
     "data": {
       "title": "Yarra City Council",
       "phone": "(03) 9205 5555",
@@ -8066,7 +8066,7 @@
       -37.69100587600002,
       144.972141481
     ],
-    "name": "DAREBIN",
+    "name": "Darebin",
     "data": {
       "title": "Darebin City Council",
       "phone": "(03) 8470 8888",
@@ -8343,7 +8343,7 @@
       -37.775454704000026,
       144.93877311799997
     ],
-    "name": "MELBOURNE",
+    "name": "Melbourne",
     "data": {
       "title": "Melbourne City Council",
       "phone": "(03) 9658 9658",
@@ -8656,9 +8656,9 @@
       -37.69100587600002,
       144.972141481
     ],
-    "name": "MERRI-BEK",
+    "name": "Merri-Bek",
     "data": {
-      "title": "Merri-bek City Council",
+      "title": "Merri-Bek City Council",
       "phone": "(03) 9240 1111",
       "address": "90 Bell Street, COBURG 3058",
       "contact": "info@moreland.vic.gov.au",
@@ -9057,7 +9057,7 @@
       -37.81383347100001,
       144.85983413600002
     ],
-    "name": "HOBSONS BAY",
+    "name": "Hobsons Bay",
     "data": {
       "title": "Hobsons Bay City Council",
       "phone": "1300 179 944",
@@ -9390,7 +9390,7 @@
       -37.70920574799999,
       144.89813104799998
     ],
-    "name": "MOONEE VALLEY",
+    "name": "Moonee Valley",
     "data": {
       "title": "Moonee Valley City Council",
       "phone": "(03) 9243 8888",
@@ -9639,7 +9639,7 @@
       -37.75587191300002,
       144.88212233700006
     ],
-    "name": "MARIBYRNONG",
+    "name": "Maribyrnong",
     "data": {
       "title": "Maribyrnong City Council",
       "phone": "(03) 9688 0200",
@@ -10572,7 +10572,7 @@
       -37.48221758599999,
       144.70604313700005
     ],
-    "name": "HUME",
+    "name": "Hume",
     "data": {
       "title": "Hume City Council",
       "phone": "(03) 9205 2200",
@@ -11389,7 +11389,7 @@
       -37.78094884500001,
       144.47768441699998
     ],
-    "name": "WYNDHAM",
+    "name": "Wyndham",
     "data": {
       "title": "Wyndham City Council",
       "phone": "1300 023 411",
@@ -11782,7 +11782,7 @@
       -37.66292487599998,
       144.75752098500004
     ],
-    "name": "BRIMBANK",
+    "name": "Brimbank",
     "data": {
       "title": "Brimbank City Council",
       "phone": "(03) 9249 4000",
@@ -12247,7 +12247,7 @@
       -37.552416705999974,
       144.56117626000002
     ],
-    "name": "MELTON",
+    "name": "Melton",
     "data": {
       "title": "Melton City Council",
       "phone": "(03) 9747 7200",
@@ -15156,7 +15156,7 @@
       -37.524954432000015,
       145.87968598199996
     ],
-    "name": "YARRA RANGES",
+    "name": "Yarra Ranges",
     "data": {
       "title": "Yarra Ranges Shire Council",
       "phone": "(03) 9294 6905",
@@ -16689,7 +16689,7 @@
       -37.861248337000006,
       145.52765805800004
     ],
-    "name": "CARDINIA",
+    "name": "Cardinia",
     "data": {
       "title": "Cardinia Shire Council",
       "phone": "1300 787 624",
@@ -17518,7 +17518,7 @@
       -37.94189090200001,
       145.23325526999997
     ],
-    "name": "CASEY",
+    "name": "Casey",
     "data": {
       "title": "Casey City Council",
       "phone": "(03) 9705 5200",
@@ -17747,7 +17747,7 @@
       -37.924698675,
       145.14358753500005
     ],
-    "name": "GREATER DANDENONG",
+    "name": "Greater Dandenong",
     "data": {
       "title": "Greater Dandenong City Council",
       "phone": "(03) 8571 1000",
@@ -17944,7 +17944,7 @@
       -38.067513442999996,
       145.156230909
     ],
-    "name": "FRANKSTON",
+    "name": "Frankston",
     "data": {
       "title": "Frankston City Council",
       "phone": "1300 322 322",
