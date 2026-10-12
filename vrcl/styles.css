@@ -1,0 +1,176 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #101a2b;
+  color: #edf4ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 14% 0%, rgb(42 85 130 / 22%), transparent 36rem),
+    #101a2b;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: clamp(16px, 3vw, 36px);
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  width: min(100%, 1440px);
+  margin: 0 auto 20px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #78d5d0;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 680;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #a9b8cc;
+  font-size: 0.93rem;
+}
+
+.count {
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  border: 1px solid rgb(120 213 208 / 28%);
+  border-radius: 999px;
+  background: rgb(120 213 208 / 8%);
+  color: #a6eeea;
+  font-size: 0.83rem;
+  font-weight: 650;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: min(100%, 1440px);
+  min-height: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgb(184 207 235 / 14%);
+  border-radius: 18px;
+  background: #172438;
+  box-shadow: 0 24px 70px rgb(0 0 0 / 28%);
+}
+
+#map {
+  flex: 1;
+  min-height: 420px;
+  background: #dce7ec;
+}
+
+.map-footer {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 15px;
+  color: #a9b8cc;
+  font-size: 0.78rem;
+}
+
+#status {
+  overflow-wrap: anywhere;
+}
+
+#status[data-state="error"] {
+  color: #ffaaa7;
+}
+
+#fit-map {
+  flex: 0 0 auto;
+  padding: 7px 11px;
+  border: 1px solid rgb(184 207 235 / 24%);
+  border-radius: 8px;
+  background: #22334b;
+  color: #edf4ff;
+  font: inherit;
+  cursor: pointer;
+}
+
+#fit-map:hover {
+  background: #2c4260;
+}
+
+#fit-map:focus-visible {
+  outline: 2px solid #78d5d0;
+  outline-offset: 2px;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #172438;
+  color: #edf4ff;
+}
+
+.leaflet-popup-content {
+  min-width: 180px;
+  margin: 13px 16px;
+}
+
+.popup-title {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.popup-subtitle {
+  margin: 0;
+  color: #a9b8cc;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 16px 12px;
+  }
+
+  header {
+    align-items: flex-start;
+  }
+
+  .count {
+    padding: 7px 9px;
+    font-size: 0.72rem;
+  }
+
+  main,
+  #map {
+    min-height: 60vh;
+  }
+
+  .map-footer {
+    align-items: flex-start;
+  }
+}
